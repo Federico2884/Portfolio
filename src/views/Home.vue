@@ -273,7 +273,7 @@ function copyEmail() {
   </section>
 
   <!-- Skills & Tools Section -->
-  <section class="mx-auto max-w-5xl px-6 py-16 scroll-mt-24">
+  <section id="skills" class="mx-auto max-w-5xl px-6 py-16 scroll-mt-24">
     <SectionHeading eyebrow="What I use" title="Skills & Tools" />
 
     <!-- Category filter -->
@@ -427,7 +427,7 @@ function copyEmail() {
   </section>
 
   <!-- Bento Connection Section -->
-  <section class="mx-auto max-w-5xl px-6 py-20">
+  <section id="connect" class="mx-auto max-w-5xl px-6 py-20 scroll-mt-24">
     <SectionHeading eyebrow="Let's connect" title="Get in Touch" />
     
     <div class="grid gap-6 md:grid-cols-3 md:grid-rows-2 max-w-5xl mx-auto mt-10">

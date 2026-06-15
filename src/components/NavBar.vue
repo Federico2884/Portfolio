@@ -6,9 +6,10 @@ const scrolled = ref(false)
 
 const links = [
   { to: '#home', label: 'Home' },
-  { to: '#about', label: 'About' },
+  { to: '#skills', label: 'Skills' },
   { to: '#projects', label: 'Projects' },
   { to: '#education', label: 'Education' },
+  { to: '#connect', label: 'Connect' },
 ]
 
 const activeSection = ref('#home')
@@ -23,7 +24,7 @@ onMounted(() => {
   onScroll()
 
   // Track sections for active state highlight
-  const sectionIds = ['home', 'about', 'projects', 'education']
+  const sectionIds = ['home', 'skills', 'projects', 'education', 'connect']
   
   observer = new IntersectionObserver(
     (entries) => {
