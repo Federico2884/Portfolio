@@ -33,7 +33,7 @@ async function upload(field, event) {
   uploading.value = true
   uploadError.value = ''
   const safeName = file.name.toLowerCase().replace(/[^a-z0-9.]+/g, '-')
-  const path = `projects/${Date.now()}-${safeName}`
+  const path = `${field.folder || 'projects'}/${Date.now()}-${safeName}`
   const { error } = await supabase.storage.from(BUCKET).upload(path, file, { cacheControl: '31536000' })
   uploading.value = false
   if (error) {
@@ -73,6 +73,14 @@ function submit() {
           </div>
         </div>
       </template>
+
+      <div v-else-if="f.type === 'file'" class="image-inputs">
+        <input :id="'f-' + f.key" v-model="draft[f.key]" type="text" placeholder="URL file, atau unggah di bawah" />
+        <input type="file" :accept="f.accept" :disabled="uploading" @change="upload(f, $event)" />
+        <a v-if="draft[f.key]" :href="assetUrl(draft[f.key])" target="_blank" rel="noopener" class="hint">Buka file saat ini</a>
+        <p v-if="uploading" class="hint">Mengunggah…</p>
+        <p v-if="uploadError" class="error">{{ uploadError }}</p>
+      </div>
 
       <div v-else-if="f.type === 'icon'" class="icon-field">
         <input :id="'f-' + f.key" v-model="draft[f.key]" type="text" />

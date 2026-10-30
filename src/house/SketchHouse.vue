@@ -47,12 +47,18 @@ onBeforeUnmount(() => destroy?.())
             <h1>hi, i'm <span class="scrib" data-kind="circle">{{ data.firstName }}</span>.</h1>
           </header>
           <div class="home-row">
-            <p class="lede">
-              <template v-for="(part, i) in data.intro" :key="i">
-                <span v-if="part.mark" class="scrib" data-kind="underline">{{ part.text }}</span>
-                <template v-else>{{ part.text }}</template>
-              </template>
-            </p>
+            <div class="home-intro">
+              <p class="lede">
+                <template v-for="(part, i) in data.intro" :key="i">
+                  <span v-if="part.mark" class="scrib" data-kind="underline">{{ part.text }}</span>
+                  <template v-else>{{ part.text }}</template>
+                </template>
+              </p>
+              <div v-if="data.cv" class="cv-row">
+                <a class="btn dark sk" data-fill="var(--ink)" :href="data.cv" target="_blank" rel="noopener">Curriculum Vitae</a>
+                <span class="label muted">PDF</span>
+              </div>
+            </div>
             <div class="hallway">
               <div id="hallDoors" class="hall-doors"></div>
               <div id="catSpot" class="cat-spot">

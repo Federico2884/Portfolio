@@ -31,6 +31,7 @@ const houseData = computed(() => {
 
   return {
     name: p.name,
+    cv: p.cv_url ? assetUrl(p.cv_url) : '',
     logo: (p.name.split(' ')[0] || 'home').toLowerCase() + '.',
     firstName: p.name.split(' ')[0] || '',
     kicker: (p.roles || []).join(' · '),

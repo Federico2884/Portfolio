@@ -58,4 +58,5 @@ export const profileFields = [
   { key: 'github', label: 'GitHub', type: 'url' },
   { key: 'linkedin', label: 'LinkedIn', type: 'url' },
   { key: 'instagram', label: 'Instagram', type: 'url' },
+  { key: 'cv_url', label: 'CV (PDF)', type: 'file', accept: 'application/pdf', folder: 'cv', nullable: true, hint: 'Tombol "Curriculum Vitae" di halaman depan hanya muncul kalau ini terisi.' },
 ]

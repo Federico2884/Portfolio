@@ -14,6 +14,7 @@ create table if not exists public.profile (
   github      text not null default '',
   linkedin    text not null default '',
   instagram   text not null default '',
+  cv_url      text,                                      -- uploaded CV (PDF) in the portfolio bucket
   updated_at  timestamptz not null default now()
 );
 
@@ -51,6 +52,9 @@ create table if not exists public.education (
   sort_order   int not null default 0,
   created_at   timestamptz not null default now()
 );
+
+-- Added after the first release; safe to run on an existing database.
+alter table public.profile add column if not exists cv_url text;
 
 -- Who may edit. Only emails listed here can write, even if someone else signs up.
 create table if not exists public.admins (

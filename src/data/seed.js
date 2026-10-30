@@ -11,6 +11,7 @@ export const seed = {
     github: 'https://github.com/Federico2884',
     linkedin: 'https://linkedin.com/in/federico-alex-marlian-017b22325',
     instagram: 'https://instagram.com/fdrco_valvet',
+    cv_url: null,
   },
 
   projects: [

@@ -320,3 +320,8 @@ h1, h2, h3 { font-family: var(--f-display); font-weight: 700; line-height: 1; ma
 .entry .chips { margin: 12px 0 0; }
 /* shown for a moment while content loads from the database */
 .house-loading { min-height: 100svh; display: grid; place-items: center; margin: 0; background: var(--paper); color: #555555; font-family: var(--f-display); font-size: 28px; }
+/* CV button under the home intro */
+.home-intro { display: grid; gap: 22px; justify-items: start; margin-bottom: 40px; }
+.home-row .home-intro .lede { margin-bottom: 0; }
+.cv-row { display: flex; align-items: center; gap: 12px; }
+@media (max-width: 900px) { .home-intro { margin-bottom: 0; } }
